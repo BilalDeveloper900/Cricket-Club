@@ -6,12 +6,10 @@
 
 .container {
   display: flex;
-  border: 1px solid;
 }
 .container .top {
-  border: 1px solid;
   padding-top: 80px;
-  width: 90%;
+  width: 95%;
   margin: auto;
 }
 .container .top Button {
@@ -20,23 +18,28 @@
 }
 .container .top .side-bar {
   border-radius: 5px;
-  padding: 25px;
+  padding: 0px 25px;
   width: 95%;
   box-shadow: 2px 2px 10px -4px rgba(0, 131, 164, 0.75);
 }
 .container .top .side-bar .btn-4 {
-  margin: 20px 0px;
+  margin: 30px 0px;
+}
+.container .top .side-bar .btn-4:hover {
+  cursor: pointer;
 }
 .container .top .side-bar .btn-4 .icon-clicked {
   display: inline;
   padding: 4px 8px;
   border-radius: 5px;
-  color: white;
   margin-right: 10px;
   background-color: #0083a4;
   font-size: 18px;
   border: 1px solid #0083a4;
   box-shadow: 2px 2px 10px -4px rgba(0, 131, 164, 0.75);
+}
+.container .top .side-bar .btn-4 .icon-clicked i {
+  color: rgb(255, 255, 255);
 }
 .container .top .side-bar .btn-4 .icon {
   display: inline;
@@ -59,4 +62,47 @@
   border-radius: 5px;
   padding: 25px;
   box-shadow: 2px 2px 10px -4px rgba(0, 131, 164, 0.75);
+}
+
+.slot b {
+  font-size: 18px;
+}
+.slot .slot-1 {
+  border: 1px solid #b0b4bb;
+  border-radius: 5px;
+  display: flex;
+  height: 100px;
+  padding: 20px;
+  margin: 10px 0px;
+}
+.slot .slot-1 .slot-icon {
+  padding: 15px;
+  border: 1px solid #b0b4bb;
+  border-radius: 50px;
+  height: 62px;
+  margin-right: 20px;
+}
+.slot .slot-1 .slot-icon i {
+  font-size: 30px;
+  color: #727e95;
+}
+.slot .slot-1 .slot-txt p {
+  color: #727e95;
+}
+.slot .slot-1 .slot-txt p span {
+  color: black;
+  font-weight: bold;
+}
+.slot .slot-1 .slot-txt .value {
+  padding: 4px 8px;
+  border-radius: 5px;
+  border: 1px solid #0083a4;
+  display: inline;
+  font-weight: bold;
+  color: white;
+  background: #0083a4;
+}
+.slot .slot-1.selected {
+  border-radius: 5px; /* Add your desired border-radius value */
+  border: 2px solid #0083a4; /* Add your desired border color */
 }/*# sourceMappingURL=App.css.map */

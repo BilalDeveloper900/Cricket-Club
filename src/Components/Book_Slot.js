@@ -1,17 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Date from "./Date";
 import Form from "./Form";
 import Summery from "./Summery";
 import Slot from "./Slot";
 import { Container, Row, Col } from "react-bootstrap";
-import { useState } from "react";
 
 function Book_Slot() {
-  const [isClicked, setIsClicked] = useState(false);
+  const [activeTab, setActiveTab] = useState("slot");
 
-  // Function to handle the click event and toggle the state
-  const handleClick = () => {
-    setIsClicked(!isClicked);
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
   };
 
   return (
@@ -19,57 +17,89 @@ function Book_Slot() {
       <Row className="top">
         <Col sm={3}>
           <div className="top-button border side-bar">
-            <div className="btn-4" onClick={handleClick}>
-              <div className={isClicked ? "icon" : "icon-clicked"}>
-                <i class="fa fa-check-square" aria-hidden="true"></i>
+            <div
+              className={`btn-4 ${activeTab === "slot" ? "active" : ""}`}
+              onClick={() => handleTabClick("slot")}
+            >
+              <div
+                className={`icon ${activeTab === "slot" ? "icon-clicked" : ""}`}
+              >
+                <i className="fa fa-check-square" aria-hidden="true"></i>
               </div>
-              <span className={isClicked ? "btn-txt" : "btn-txt-clicked"}>
+              <span
+                className={`btn-txt ${
+                  activeTab === "slot" ? "btn-txt-clicked" : ""
+                }`}
+              >
                 <b>Slot</b>
               </span>
             </div>
 
-            <div className="btn-4">
-              <div className="icon">
-                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+            <div
+              className={`btn-4 ${activeTab === "date" ? "active" : ""}`}
+              onClick={() => handleTabClick("date")}
+            >
+              <div
+                className={`icon ${activeTab === "date" ? "icon-clicked" : ""}`}
+              >
+                <i className="fa fa-calendar-check-o" aria-hidden="true"></i>
               </div>
-              <span className="btn-txt">
+              <span
+                className={`btn-txt ${
+                  activeTab === "date" ? "btn-txt-clicked" : ""
+                }`}
+              >
                 <b>Date & Time</b>
               </span>
             </div>
 
-            <div className="btn-4">
-              <div className="icon">
-                <i class="fa-regular fa-address-card"></i>
+            <div
+              className={`btn-4 ${activeTab === "details" ? "active" : ""}`}
+              onClick={() => handleTabClick("details")}
+            >
+              <div
+                className={`icon ${
+                  activeTab === "details" ? "icon-clicked" : ""
+                }`}
+              >
+                <i className="fa-regular fa-address-card"></i>
               </div>
-              <span className="btn-txt">
+              <span
+                className={`btn-txt ${
+                  activeTab === "details" ? "btn-txt-clicked" : ""
+                }`}
+              >
                 <b>Details</b>
               </span>
             </div>
 
-            <div className="btn-4">
-              <div className="icon">
-                <i class="fa fa-list-alt" aria-hidden="true"></i>
+            <div
+              className={`btn-4 ${activeTab === "summary" ? "active" : ""}`}
+              onClick={() => handleTabClick("summary")}
+            >
+              <div
+                className={`icon ${
+                  activeTab === "summary" ? "icon-clicked" : ""
+                }`}
+              >
+                <i className="fa fa-list-alt" aria-hidden="true"></i>
               </div>
-              <span className="btn-txt">
-                <b>Summery</b>
+              <span
+                className={`btn-txt ${
+                  activeTab === "summary" ? "btn-txt-clicked" : ""
+                }`}
+              >
+                <b>Summary</b>
               </span>
             </div>
           </div>
         </Col>
         <Col sm={9}>
           <div className="border center">
-            <div>
-              <Slot />
-            </div>
-            <div>
-              <Date />
-            </div>
-            <div>
-              <Form />
-            </div>
-            <div>
-              <Summery />
-            </div>
+            {activeTab === "slot" && <Slot />}
+            {activeTab === "date" && <Date />}
+            {activeTab === "details" && <Form />}
+            {activeTab === "summary" && <Summery />}
           </div>
         </Col>
       </Row>
