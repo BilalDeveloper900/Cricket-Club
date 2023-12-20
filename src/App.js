@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Routes, Form } from "react-router-dom";
 import Home from "./Components/Home";
 import Book_Slot from "./Components/Book_Slot";
 
+import "react-datepicker/dist/react-datepicker.css";
+
 function App() {
   return (
     <div>
